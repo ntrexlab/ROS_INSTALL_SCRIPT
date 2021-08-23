@@ -1,6 +1,6 @@
 #!/bin/bash
 # Apache License 2.0
-# Copyright (c) 2018, ROBOTIS CO., LTD.
+# Copyright (c) 2021, NTREX CO., LTD.
 
 echo ""
 echo "[Note] Target OS version  >>> Ubuntu 18.04.x (Bionic Beaver) or Linux Mint 19.x"

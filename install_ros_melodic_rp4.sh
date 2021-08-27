@@ -58,7 +58,7 @@ rosdep update
 echo "[Create a catkin Workspace and fetch the core packages]"
 mkdir -p ~/ros_catkin_ws
 cd ~/ros_catkin_ws
-rosinstall_generator ros_comm tf nav_msgs --rosdistro melodic --deps --wet-only --tar > melodic-ros_comm-wet.rosinstall
+rosinstall_generator ros_comm tf nav_msgs cv_bridge --rosdistro melodic --deps --wet-only --tar > melodic-ros_comm-wet.rosinstall
 wstool init src melodic-ros_comm-wet.rosinstall
 
 echo "[Resolve Dependencies]"

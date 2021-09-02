@@ -25,7 +25,7 @@ sudo apt-get install -y chrony ntpdate
 sudo ntpdate ntp.ubuntu.com
 
 echo "[Add the ROS2 repository]"
-sudo apt update && sudo apt install curl gnupg2 lsb-release
+sudo apt update && sudo apt install -y curl gnupg2 lsb-release
 sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key  -o /usr/share/keyrings/ros-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 
@@ -35,7 +35,7 @@ sudo apt-get upgrade -y
 
 echo "[Install the bootstrap dependencies]"
 sudo apt install -y build-essential cmake
-pip3 install rosdep rosinstall_generator wstool rosinstall
+sudo pip3 install rosdep rosinstall_generator wstool rosinstall
 
 echo "[Initialize rosdep]"
 sudo sh -c "rosdep init"

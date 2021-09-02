@@ -34,15 +34,14 @@ sudo apt-get update -y
 sudo apt-get upgrade -y
 
 echo "[Install the bootstrap dependencies]"
-sudo apt install -y build-essential cmake
-sudo pip3 install rosdep rosinstall_generator wstool rosinstall
+sudo apt install -y build-essential cmake python3-argcomplete python3-colcon-common-extensions python3-rosdep python3-rosinstall-generator python-wstool python3-rosinstall
 
 echo "[Initialize rosdep]"
 sudo sh -c "rosdep init"
 rosdep update
 
 echo "[Create a catkin Workspace and fetch the core packages]"
-sudo mkdir ~/ros_colcon_ws
+mkdir ~/ros_colcon_ws
 cd ~/ros_colcon_ws
 rosinstall_generator ros_base nav_msgs cv_bridge example_interfaces demo_nodes_cpp demo_nodes_py --rosdistro foxy --deps --wet-only --tar > foxy-ros_base-wet.rosinstall
 wstool init src foxy-ros_base-wet.rosinstall

@@ -43,7 +43,7 @@ rosdep update
 echo "[Create a catkin Workspace and fetch the core packages]"
 mkdir ~/ros_colcon_ws
 cd ~/ros_colcon_ws
-rosinstall_generator ros_base nav_msgs cv_bridge example_interfaces demo_nodes_cpp demo_nodes_py --rosdistro foxy --deps --wet-only --tar > foxy-ros_base-wet.rosinstall
+rosinstall_generator ros_base nav_msgs cv_bridge example_interfaces demo_nodes_cpp demo_nodes_py joint_state_publisher --rosdistro foxy --deps --wet-only --tar > foxy-ros_base-wet.rosinstall
 vcs import src foxy-ros_base-wet.rosinstall
 
 echo "[Resolve Dependencies]"

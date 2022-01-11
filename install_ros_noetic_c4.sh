@@ -20,7 +20,7 @@ echo "[Update the package lists]"
 sudo apt update -y
 
 echo "[Install build environment, the chrony, ntpdate and set the ntpdate]"
-sudo apt install --reinstall -y libsdl2-2.0-0
+sudo apt install --reinstall --force-yes -y libsdl2-2.0-0
 sudo apt install -y chrony ntpdate curl build-essential
 sudo ntpdate ntp.ubuntu.com
 

@@ -28,6 +28,7 @@ sudo sh -c 'echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/ke
 
 echo "[Install ROS 2 packages]"
 sudo apt install --reinstall --force-yes -y libsdl2-2.0-0
+sudo apt install g++
 sudo apt update && sudo apt install -y ros-$name_ros_version-desktop
 
 echo "[Environment setup]"

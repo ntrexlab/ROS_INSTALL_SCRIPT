@@ -70,6 +70,18 @@ catkin_init_workspace
 cd $HOME/$name_catkin_workspace
 catkin_make
 
+echo "[Build the Cartographer]"
+sudo apt update
+sudo apt install -y python3-wstool python3-rosdep ninja-build stow
+cd $HOME/$name_catkin_workspace/src
+wstool init src
+wstool merge -t src https://raw.githubusercontent.com/cartographer-project/cartographer_ros/master/cartographer_ros.rosinstall
+wstool update -t src
+rosdep update
+rosdep install --from-paths src --ignore-src --rosdistro=noetic -y
+src/cartographer/scripts/install_abseil.sh
+catkin_make_isolated --install --use-ninja
+
 echo "[Set the ROS evironment]"
 sh -c "echo \"alias eb='nano ~/.bashrc'\" >> ~/.bashrc"
 sh -c "echo \"alias sb='source ~/.bashrc'\" >> ~/.bashrc"

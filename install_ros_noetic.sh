@@ -73,7 +73,8 @@ catkin_make
 echo "[Build the Cartographer]"
 sudo apt update
 sudo apt install -y python3-wstool python3-rosdep ninja-build stow
-cd $HOME/$name_catkin_workspace/src
+mkdir -p ~/ros_catkin_ws
+cd ~ros_catkin_ws
 wstool init src
 wstool merge -t src https://raw.githubusercontent.com/cartographer-project/cartographer_ros/master/cartographer_ros.rosinstall
 wstool update -t src
@@ -93,7 +94,7 @@ sh -c "echo \"alias cm='cd ~/$name_catkin_workspace && catkin_make'\" >> ~/.bash
 
 sh -c "echo \"source /opt/ros/$name_ros_version/setup.bash\" >> ~/.bashrc"
 sh -c "echo \"source ~/$name_catkin_workspace/devel/setup.bash\" >> ~/.bashrc"
-sh -c "echo \"source ~/$name_catkin_workspace/install_isolated/setup.bash\" >> ~/.bashrc"
+sh -c "echo \"source ~/ros_catkin_ws/install_isolated/setup.bash\" >> ~/.bashrc"
 
 sh -c "echo \"export ROS_MASTER_URI=http://localhost:11311\" >> ~/.bashrc"
 sh -c "echo \"export ROS_HOSTNAME=localhost\" >> ~/.bashrc"

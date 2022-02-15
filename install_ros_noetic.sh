@@ -74,7 +74,7 @@ echo "[Build the Cartographer]"
 sudo apt update
 sudo apt install -y python3-wstool python3-rosdep ninja-build stow
 mkdir -p ~/ros_catkin_ws
-cd ~ros_catkin_ws
+cd ~/ros_catkin_ws
 wstool init src
 wstool merge -t src https://raw.githubusercontent.com/cartographer-project/cartographer_ros/master/cartographer_ros.rosinstall
 wstool update -t src

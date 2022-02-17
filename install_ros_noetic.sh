@@ -81,7 +81,7 @@ wstool update -t src
 rosdep update
 rosdep install --from-paths src --ignore-src --rosdistro=noetic -y
 src/cartographer/scripts/install_abseil.sh
-catkin_make_isolated --install --use-ninja -j$($(nproc)-1) -l$($(nproc)-1)
+catkin_make_isolated --install --use-ninja -j$(($(nproc) - 1)) -l$(($(nproc) - 1))
  
 echo "[Set the ROS evironment]"
 sh -c "echo \"alias eb='nano ~/.bashrc'\" >> ~/.bashrc"

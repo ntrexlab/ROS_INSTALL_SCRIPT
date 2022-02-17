@@ -72,7 +72,7 @@ catkin_make
 
 echo "[Build the Cartographer]"
 sudo apt update
-sudo apt install -y python3-wstool python3-rosdep ninja-build stow
+sudo apt install -y python3-wstool python3-rosdep ninja-build stow libceres-dev liblua5.2-dev
 mkdir -p ~/ros_catkin_ws
 cd ~/ros_catkin_ws
 wstool init src

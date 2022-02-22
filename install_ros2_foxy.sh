@@ -1,6 +1,6 @@
 #!/bin/bash
 # Apache License 2.0
-# Copyright (c) 2020, ROBOTIS CO., LTD.
+# Copyright (c) 2021, NTREX CO., LTD.
 
 echo ""
 echo "[Note] OS version  >>> Ubuntu 20.04 (Focal Fossa)"

@@ -51,13 +51,16 @@ sudo apt upgrade -y
 echo "[Install the ros-desktop-full and all rqt plugins]"
 sudo apt install -y ros-$name_ros_version-desktop-full ros-$name_ros_version-rqt-*
 
-echo "[Initialize rosdep]"
-sudo sh -c "rosdep init"
-rosdep update
-
 echo "[Environment setup and getting rosinstall]"
 source /opt/ros/$name_ros_version/setup.sh
-sudo apt install -y python-rosinstall python-rosinstall-generator python-wstool git
+sudo apt install -y python-rosinstall python-rosinstall-generator python-wstool build-essential git
+
+echo "[Install rosdep]"
+sudo apt install python-rosdep
+
+echo "[Initialize rosdep and Update]"
+sudo sh -c "rosdep init"
+rosdep update
 
 echo "[Make the catkin workspace and test the catkin_make]"
 mkdir -p $HOME/$name_catkin_workspace/src

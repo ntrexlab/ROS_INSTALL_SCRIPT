@@ -2,6 +2,10 @@
 # Apache License 2.0
 # Copyright (c) 2025, NTREX CO., LTD.
 
+echo ""
+echo "PRESS [ENTER] TO CONTINUE THE INSTALLATION"
+echo "IF YOU WANT TO CANCEL, PRESS [CTRL] + [C]"
+read
 
 # Update and upgrade the system
 sudo apt update && sudo apt upgrade -y
